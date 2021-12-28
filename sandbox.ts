@@ -1,56 +1,41 @@
-// arrays
-let names = ['tobey', 'tom', 'andrew']
-// we can't push anything inside array of type string, if we want to push then it should be of a same type(string)
-names.push('robert')
-// names.push(2)
-// names[0] = 20
-names[0] = 'bob'
-// also most important point we can change the type of variable
-// names = 'bob' if the variable is array type then it should be array
+// Explicit types
+let character: string = "andrew";
+let age: number;
+let isLoggedIn: boolean;
 
+// age="tobey"
+age = 30
 
-let numbers = [20, 18, 17]
-// we can't push anything inside array of type number, if we want to push then it should be of a same type(number)
-numbers.push(2)
-// numbers.push('robert')
-numbers[0] = 20
-// numbers[0] = 'bob'
+// isLoggedIn = 25;
+isLoggedIn = true;
 
-// if the array is mixed array then we can push integer of any type inside array
-let mixed = [10, 'andrew', 17, 18, 'tom', false]
-mixed.push('robert')
-mixed[2] = 'tobey'
-mixed[5] = 20
-mixed[1] = true
+// Arrays
+let spiderMans: string[] = [];
 
+spiderMans.push("andrew");
+spiderMans.push("Tobey");
+spiderMans.push("Tom");
+console.log("Spiderman array is:", spiderMans);
 
-// objects
-let ninja = {
-    name: 'mario',
-    belt: 'black',
-    age: 30
-};
+// Union Types
+let mixed: (string | number | boolean)[] = []
+mixed.push('hello');
+mixed.push(false);
+mixed.push(20);
+console.log("Mixed array is: ", mixed);
 
-ninja.age = 40;
-ninja.name = 'ryu';
-// ninja.age = '30';
-// ninja.skills = ['fighting', 'sneaking']
+let uid: string | number;
+// here, no paranthesis req as there is no array [] at the end
 
-ninja = {
-    name: 'yoshi',
-    belt: 'orange',
-    age: 40,
-    // skills: ['running'],
-};
+// Objects
+let spiderManOne: object;
+spiderManOne = { name: "Tom", age: 24 }
+console.log("Spiderman 1 object is: ", spiderManOne);
 
-// add key value pair inside object dynamically
-interface AddInsideObject {
-    [key: string]: any
+let spiderManTwo: {
+    name: string,
+    age: number,
+    suitColor: string
 }
-
-// var obj: AddInsideObject = {}; 
-// or to make it compact
-var obj: {[k: string]: any} = {};
-obj.prop = "value";
-obj.prop2 = 40;
-console.log(obj)
+spiderManTwo = { name: "Tobey", age: 38, suitColor: "red-black" }
+console.log("spidermanTwo object is: ", spiderManTwo);
