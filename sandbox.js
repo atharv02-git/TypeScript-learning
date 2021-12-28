@@ -1,14 +1,42 @@
-var character = "atharv";
-var age = 20;
-var isWorking = true;
-// Note in TS we can assign different values to the variable but we can't change their types
-// character = 20 will give error
-character = "tanay";
-// age = "tanay" give error;
-age = 21;
-// isWorking = 21 error;
-isWorking = false;
-var circle = function (diameter) {
-    return diameter * Math.PI;
+// arrays
+var names = ['tobey', 'tom', 'andrew'];
+// we can't push anything inside array of type string, if we want to push then it should be of a same type(string)
+names.push('robert');
+// names.push(2)
+// names[0] = 20
+names[0] = 'bob';
+// also most important point we can change the type of variable
+// names = 'bob' if the variable is array type then it should be array
+var numbers = [20, 18, 17];
+// we can't push anything inside array of type number, if we want to push then it should be of a same type(number)
+numbers.push(2);
+// numbers.push('robert')
+numbers[0] = 20;
+// numbers[0] = 'bob'
+// if the array is mixed array then we can push integer of any type inside array
+var mixed = [10, 'andrew', 17, 18, 'tom', false];
+mixed.push('robert');
+mixed[2] = 'tobey';
+mixed[5] = 20;
+mixed[1] = true;
+// objects
+var ninja = {
+    name: 'mario',
+    belt: 'black',
+    age: 30
 };
-console.log(circle(10));
+ninja.age = 40;
+ninja.name = 'ryu';
+// ninja.age = '30';
+// ninja.skills = ['fighting', 'sneaking']
+ninja = {
+    name: 'yoshi',
+    belt: 'orange',
+    age: 40
+};
+// var obj: AddInsideObject = {}; 
+// or to make it compact
+var obj = {};
+obj.prop = "value";
+obj.prop2 = 40;
+console.log(obj);
