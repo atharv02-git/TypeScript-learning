@@ -1,14 +1,25 @@
-type StringOrNum = string | number;
-type ObjWithName = { name: string, uid: StringOrNum };
+// Function signatures
 
-const logDetails = (uid: StringOrNum, item: string) => {
-    console.log(`${item} has a uid of ${uid}`)
+// example 1
+let greet: (a: string, b: string) => void; /*greet will return void*/
+
+greet = (name: string, greetings: string) => {
+    console.log(`${name} says ${greetings}`);
+}
+// Example 2
+
+let calc: (a: number, b: number, c: string) => number; /*calc will return number*/
+calc = (numOne: number, numTwo: number, action: string) =>{
+    if(action === 'add'){
+        return numOne + numTwo;
+    }else{
+        return numOne - numTwo;
+    }
 }
 
-logDetails('dsdasdas12','pen')
+// objects
+let logDetails: (obj: {name: string, age: number}) => void; /*logDetails will return void*/
 
-const greet = (user: ObjWithName) => {
-    console.log(`${user.name} says hello`)
-    console.log(`uid is: ${user.uid}`)
+logDetails = (spiderMan: {name: string, age: number}) => {
+    console.log(`${spiderMan.name} is ${spiderMan.age} years old`);
 }
-greet({name: 'tobey', uid:12})

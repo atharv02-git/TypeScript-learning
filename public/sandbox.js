@@ -1,10 +1,22 @@
 "use strict";
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+// Function signatures
+// example 1
+let greet; /*greet will return void*/
+greet = (name, greetings) => {
+    console.log(`${name} says ${greetings}`);
 };
-logDetails('dsdasdas12', 'pen');
-const greet = (user) => {
-    console.log(`${user.name} says hello`);
-    console.log(`uid is: ${user.uid}`);
+// Example 2
+let calc; /*calc will return number*/
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-greet({ name: 'tobey', uid: 12 });
+// objects
+let logDetails; /*logDetails will return void*/
+logDetails = (spiderMan) => {
+    console.log(`${spiderMan.name} is ${spiderMan.age} years old`);
+};
