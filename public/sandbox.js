@@ -1,17 +1,10 @@
 "use strict";
-let greet;
-// greet = hello;
-greet = () => {
-    console.log("Hello again!");
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-greet();
-const add = (a, b, c) => {
-    console.log(a + b);
-    console.log(c);
+logDetails('dsdasdas12', 'pen');
+const greet = (user) => {
+    console.log(`${user.name} says hello`);
+    console.log(`uid is: ${user.uid}`);
 };
-add(4, 8, 10);
-// Another Function
-const minus = (a, b) => {
-    return a + b;
-};
-let result = minus(4, 6); /* if we hover over result then its type will also be number  */
+greet({ name: 'tobey', uid: 12 });
