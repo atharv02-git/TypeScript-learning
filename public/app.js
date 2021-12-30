@@ -1,9 +1,20 @@
 "use strict";
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string; /* Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either need to be initialized at declaration or initialized inside the class constructor. */
+    // private details: string; /* private access modifier ensures that class members are visible only to that class and are not accessible outside the containing class */
+    // public amount: number; /* by default, all members of a class in TypeScript are public. All the public members can be accessed anywhere without any restrictions. */
+    // constructor(c: string, d: string, a: number) {
+    //     this.client = c;
+    //     this.details = d;
+    //     this.amount = a;
+    // } 
+    /* alternative for modifiers to be used inside the constructor*/
+    constructor(
+    /* note: it's not gonna assign our variables if we remove modifiers inside the constructor */
+    client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes $${this.amount} for ${this.details}`;
@@ -17,21 +28,7 @@ const invTwo = new Invoice('luigi', 'work on the luigi website', 600);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
-// const anchor = document.querySelector('a');
-// if (anchor) {
-//     console.log(anchor)
-// }
-// // console.log(anchor.href)
-// Form
-const form = document.querySelector('.new-item-form');
-// console.log(form.children)
-// inputs
-const type = document.querySelector('#type');
-const tofrom = document.querySelector('#tofrom');
-const details = document.querySelector('#details');
-const amount = document.querySelector('#amount');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+// console.log(invoices);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
 });
