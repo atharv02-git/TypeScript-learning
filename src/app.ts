@@ -1,28 +1,15 @@
-// Interface
-interface IsSpiderman {
-    name: string;
-    age: number;
-    speak(a: string): void;
-    spend(a: number): number;
-}
+import { Invoice } from './classes/Invoice.js'
+import { Payment } from './classes/Payment.js'
+import { HasFormatter } from './interfaces/HasFormatter'
 
-const me: IsSpiderman = {
-    name: 'Andrew',
-    age: 20,
-    speak(text: string): void {
-        console.log(text);
-    },
-    spend(amount: number): number {
-        console.log('I spent', amount);
-        return amount;
-    }
-};
+// deciding the type of the document
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
 
-/* also we can pass argument inside any function but that argument should be of the type we declared as interface */
-const greetSpiderman = (spiderman: IsSpiderman) => {
-    console.log('hello ', spiderman.name)
-}
+docOne = new Invoice('Atharv', 'project building', 200);
+docTwo = new Payment('Andrew', 'plumbing', 180);
 
-greetSpiderman(me);
-console.log(me);
-
+// also we can decide the type of array
+let docArr: HasFormatter[] = [];
+docArr.push(docOne, docTwo);
+console.log(docArr)
