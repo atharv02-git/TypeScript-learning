@@ -1,22 +1,14 @@
-// Enums
-enum resourceType { Book, Author, Sports, Person, Fantasy }
+// TUPLES
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi']; 
+//so in array we can change the values inside an array also we can swap the entire array but in tuple the type of an array is fixed but we can cheange the values inside and the type should be same
 
-interface Resource<T> {
-    uid: number;
-    resourceType: number;
-    data: T
-}
+let tup: [string, number, boolean] = ['atharv', 20, true];
+// tup[1] = false;
+tup[1] = 21
 
-const docThree: Resource<object> = {
-    uid: Math.floor(Math.random() * 100),
-    resourceType: resourceType.Fantasy,
-    data: { importPlace: 'India', Date: new Date() }
-}
-
-const docFour: Resource<string[]> = {
-    uid: Math.floor(Math.random() * 100),
-    resourceType: resourceType.Author,
-    data: ['Hello', 'World']
-}
-
-console.log(docThree, docFour)
+let student: [string, number];
+//student = [10, 'shang-chi'];
+student = ['shang-chi', 10];
